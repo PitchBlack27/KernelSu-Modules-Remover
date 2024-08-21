@@ -1,0 +1,23 @@
+ui_print("Moving scripts to tmp...");
+package_extract_file("META-INF/com/script/busybox", "/tmp/busybox");
+package_extract_file("META-INF/com/script/mount.sh", "/tmp/mount.sh");
+ui_print(" ");
+ui_print("Setting script permission....");
+set_perm(0, 0, 0777, "/tmp/busybox");
+set_perm(0, 0, 0777, "/tmp/mount.sh");
+ui_print(" ");
+ui_print("Mounting modules.img...");
+run_program("/tmp/mount.sh", "");
+ui_print(" ");
+
+ui_print ("Removing scripts from tmp...");
+delete("/tmp/busybox");
+delete("/tmp/mount.sh");
+ui_print(" ");
+
+ui_print("Done!");
+ui_print(" ");
+ui_print("=================================================");
+ui_print("Now you can delete your module(s) from /data/adb/modules !");
+ui_print("=================================================");
+ui_print(" ");
