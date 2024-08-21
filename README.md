@@ -1,7 +1,7 @@
 # KernelSu-Modules-Remover
 Can help remove problematic modules on KernelSU via RECOVERY
 
-#How To Work
+# How To Work
 • Flash Module in recovery 
 
 • Open the /data/adb/modules/ folder in recovery
